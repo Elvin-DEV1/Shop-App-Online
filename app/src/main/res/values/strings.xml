@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shop Online App</string>
+    <string name="splash_title">Skincare made \nSimple, \nBeautiful, \nAnd Effective</string>
+    <string name="get_started">Get Started</string>
 </resources>
