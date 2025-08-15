@@ -2,4 +2,14 @@
     <string name="app_name">Shop Online App</string>
     <string name="splash_title">Skincare made \nSimple, \nBeautiful, \nAnd Effective</string>
     <string name="get_started">Get Started</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="product">Product</string>
+    <string name="see_all">See all</string>
+    <string name="popular_products">Popular Products</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="search">Search...</string>
+    <string name="bruno_fernandes">Bruno Fernandes</string>
+    <string name="wishlist">WishList</string>
 </resources>
