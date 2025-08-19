@@ -95,8 +95,6 @@ class MyApplication :
 
         /** Keep track of the time an app open ad is loaded to ensure you don't show an expired ad. */
         private var loadTime: Long = 0
-/////////////////////////////////////////////////////////////////////////////////////
-////////////////////////3/////////////////////////////////////////////////////////////
         fun loadAd(context: Context) {
             // Do not load ad if there is an unused ad or one is already loading.
             if (isLoadingAd || isAdAvailable()) {

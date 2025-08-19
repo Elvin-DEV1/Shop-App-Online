@@ -1,9 +1,10 @@
-package com.example.shoponlineapp
+package com.example.shoponlineapp.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.shoponlineapp.R
 import com.example.shoponlineapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
