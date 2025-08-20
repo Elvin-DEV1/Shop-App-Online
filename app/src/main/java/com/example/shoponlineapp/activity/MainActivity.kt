@@ -6,10 +6,12 @@ import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.shoponlineapp.adapter.CategoryAdapter
+import com.example.shoponlineapp.adapter.PopularAdapter
 import com.example.shoponlineapp.adapter.SliderAdpater
 import com.example.shoponlineapp.databinding.ActivityMainBinding
 import com.example.shoponlineapp.model.SliderModel
@@ -35,11 +37,23 @@ class MainActivity : AppCompatActivity() {
 
         initBanner()
         initCategory()
+        initRecommended()
 
         CoroutineScope(Dispatchers.IO).launch {
             // Initialize the Google Mobile Ads SDK on a background thread.
             MobileAds.initialize(this@MainActivity) {}
         }
+    }
+
+    private fun initRecommended() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.popular.observe(this, Observer {
+            binding.viewPopular.layoutManager =
+                GridLayoutManager(this@MainActivity, 2)
+            binding.viewPopular.adapter = PopularAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
+        })
+        viewModel.loadPopular()
     }
 
     private fun initCategory() {
