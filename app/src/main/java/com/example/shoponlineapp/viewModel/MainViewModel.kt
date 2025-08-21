@@ -24,6 +24,27 @@ class MainViewModel : ViewModel() {
     val category: LiveData<List<CategoryModel>> = _category
     val popular: LiveData<List<ItemsModel>> = _popular
 
+    fun loadFiltered(id: String) {
+        val ref = firebaseDatabase.getReference("Items")
+        val query: Query = ref.orderByChild("categoryId").equalTo(id)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val lists = mutableListOf<ItemsModel>()
+                for (childSnapshot in snapshot.children) {
+                    val list = childSnapshot.getValue(ItemsModel::class.java)
+                    if (list != null) {
+                        lists.add(list)
+                    }
+                }
+                _popular.value = lists
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseError", "Failed to load popular: ${error.message}")
+            }
+        })
+    }
+
     fun loadPopular() {
         val ref = firebaseDatabase.getReference("Items")
         val query: Query = ref.orderByChild("showRecommended").equalTo(true)

@@ -1,5 +1,6 @@
 package com.example.shoponlineapp.adapter
 
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoponlineapp.R
+import com.example.shoponlineapp.activity.ListItemsActivity
 import com.example.shoponlineapp.databinding.ViewholderCategoryBinding
 import com.example.shoponlineapp.model.CategoryModel
 
@@ -58,7 +60,12 @@ class CategoryAdapter(private val items: List<CategoryModel>) :
                 notifyItemChanged(selectedPosition)
             }
             Handler(Looper.getMainLooper()).postDelayed({
+                val intent = Intent(holder.itemView.context, ListItemsActivity::class.java).apply {
+                    putExtra("id", item.id.toString())
+                    putExtra("title", item.title)
 
+                }
+                holder.itemView.context.startActivity(intent)
             }, 1000)
         }
     }
