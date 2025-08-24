@@ -13,4 +13,8 @@
     <string name="bruno_fernandes">Bruno Fernandes</string>
     <string name="wishlist">WishList</string>
     <string name="title">Title</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="description">description</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="_0">$0</string>
 </resources>
