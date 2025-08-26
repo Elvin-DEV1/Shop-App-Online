@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShopOnlineApp">
         <activity
+            android:name=".activity.CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.MainActivity2"
             android:exported="false" />
         <activity
