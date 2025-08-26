@@ -1,5 +1,6 @@
 package com.example.shoponlineapp.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -46,10 +47,17 @@ class MainActivity : AppCompatActivity() {
         initBanner()
         initCategory()
         initRecommended()
+        initBottomMenu()
 
         CoroutineScope(Dispatchers.IO).launch {
             // Initialize the Google Mobile Ads SDK on a background thread.
             MobileAds.initialize(this@MainActivity) {}
+        }
+    }
+
+    private fun initBottomMenu() {
+        binding.CartBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CartActivity::class.java))
         }
     }
 

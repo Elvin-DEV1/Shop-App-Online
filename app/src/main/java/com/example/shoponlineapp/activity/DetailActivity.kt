@@ -3,12 +3,9 @@ package com.example.shoponlineapp.activity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.project1762.Helper.ManagmentCart
-import com.example.shoponlineapp.R
+import com.example.shoponlineapp.helper.ManagmentCart
 import com.example.shoponlineapp.adapter.PicAdapter
 import com.example.shoponlineapp.databinding.ActivityDetailBinding
 import com.example.shoponlineapp.model.ItemsModel
